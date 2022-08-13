@@ -10,6 +10,12 @@
         <option>Hey</option>
     </select>
 
+    <button wire:click="resetName($event.target.innerText)">Reset Name</button>
+
+    <form action="#" wire:submit.prevent="$set('name', 'Bingo')">
+        <button>Reset Name</button>
+    </form>
+
     {{-- guna lazy kalau nak hantar ajax bila tekan butang or tekan tempat lain --}}
     {{-- <input type="text" wire:model.lazy="name"> --}}
     {{ implode(', ', $greeting) }} {{ $name }} @if ($loud) ! @endif
